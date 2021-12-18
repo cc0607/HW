@@ -1,0 +1,38 @@
+body{
+
+	background-color: AliceBlue;
+	text-align: center;
+}
+
+.btn{
+
+	border-radius: 30%;
+	width: 100px;
+	border: 0.1px;
+	background-color: blanchedalmond;
+}
+
+.btn:hover{
+
+	opacity: 50%;
+
+
+}
+
+  
+  
+
+h1{
+
+	font-family: monospace;
+	color: lightslategray;
+}
+div{
+
+	background-color: beige;
+	margin: 0 auto;
+	width: 50%;
+	font-family: sans-serif;
+	border-style: dotted;
+	border-color: lavender;
+}
