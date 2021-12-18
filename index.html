@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="HW.css">
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+		window.addEventListener("load",start);
+
+		var answer;
+		var guess;
+		var min = 0;
+		var max = 100;
+		
+		function start(){
+			
+
+			var button = document.getElementById("submit");
+			button.addEventListener("click",compare);
+
+			answer = Math.floor(Math.random()*100+1);
+			guess = parseInt(document.getElementById("g").value);
+
+
+
+
+		}
+
+		function compare(){
+
+			var guess = parseInt(document.getElementById("g").value);
+
+			var result = "";
+			
+
+			if(guess>answer){
+
+				if(max>guess){
+
+					max = guess;
+
+				}
+
+
+				
+
+				result = "Between "+min+" and "+ max;
+
+				
+
+			}else if(guess<answer){
+
+				if(min<guess){
+
+					min = guess;
+				}
+
+				result = "Between "+ min + " and "+max;
+
+			}else if(guess==answer){
+
+				result = "You get the right answer " + guess;
+				
+
+			}else{
+
+				result = "Please enter a number between 1 and 100!"
+				
+			}
+
+			var newDiv = document.createElement("div");
+  			var newContent = document.createTextNode(result);
+  			newDiv.appendChild(newContent); //add the text node to the newly created div.
+
+  			// add the newly created element and its content into the DOM
+ 			var currentDiv = document.getElementById("div1");
+  			document.body.insertBefore(newDiv, currentDiv);
+
+
+
+		}
+
+		
+
+	</script>
+
+	<h1>Guessing Game</h1>
+
+	<h2>Your Guess(1~100)<br><input type="number" id="g" min="1" max="100"></h2>
+	
+
+		
+
+	
+	
+
+	<form action="#">
+		
+		<input type="button" id="submit" value="play" class="btn">
+
+	</form>
+
+	<div id="result">Result</div>
+
+
+
+	
+
+
+	
+
+</body>
+</html>
